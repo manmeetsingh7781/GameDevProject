@@ -1,0 +1,244 @@
+# depslib dependency file v1.0
+1707787142 source:c:\users\nishu\desktop\178games\lesson07\main.cpp
+	<windows.h>
+	<GLScene.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<iostream>
+	<windows.h>
+
+1708562196 c:\users\nishu\desktop\178games\lesson07\include\glscene.h
+	<common.h>
+
+1708995876 c:\users\nishu\desktop\178games\lesson07\include\common.h
+	<windows.h>
+	<iostream>
+	<gl/gl.h>
+	<GL/glut.h>
+	<time.h>
+	<SOIL.h>
+
+1706573799 c:\users\nishu\desktop\178games\common\include\gl\glut.h
+	<windows.h>
+	<stdlib.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1707181587 c:\users\nishu\desktop\178games\common\include\soil.h
+
+1708994848 source:c:\users\nishu\desktop\178games\lesson07\src\glplayer.cpp
+	"GLPlayer.h"
+
+1708996250 c:\users\nishu\desktop\178games\lesson07\include\glplayer.h
+	<common.h>
+	<GLTexture.h>
+	<GLTimer.h>
+
+1708994056 source:c:\users\nishu\desktop\178games\lesson07\src\glinputs.cpp
+	"GLInputs.h"
+
+1708993178 c:\users\nishu\desktop\178games\lesson07\include\glinputs.h
+	<GLModel.h>
+	<GLParallax.h>
+	<common.h>
+
+1707959816 c:\users\nishu\desktop\178games\lesson07\include\glmodel.h
+	<common.h>
+
+1708564461 c:\users\nishu\desktop\178games\lesson07\include\glparallax.h
+	<common.h>
+	<GLTexture.h>
+	<GLTimer.h>
+
+1707959816 c:\users\nishu\desktop\178games\lesson07\include\gltexture.h
+	<common.h>
+
+1708564597 c:\users\nishu\desktop\178games\lesson07\include\gltimer.h
+	<common.h>
+
+1707179556 source:c:\users\nishu\desktop\178games\lesson07\src\gllight.cpp
+	"GLLight.h"
+
+1707179780 c:\users\nishu\desktop\178games\lesson07\include\gllight.h
+	<GLScene.h>
+
+1708992850 source:c:\users\nishu\desktop\178games\lesson07\src\glmodel.cpp
+	"GLModel.h"
+
+1708994666 source:c:\users\nishu\desktop\178games\lesson07\src\glparallax.cpp
+	"GLParallax.h"
+
+1708994666 source:c:\users\nishu\desktop\178games\lesson07\src\glscene.cpp
+	"GLScene.h"
+	<GLLight.h>
+	<GLTexture.h>
+	<GLModel.h>
+	<GLInputs.h>
+	<GLParallax.h>
+
+1707353576 source:c:\users\nishu\desktop\178games\lesson07\src\gltexture.cpp
+	"GLTexture.h"
+
+1708564271 source:c:\users\nishu\desktop\178games\lesson07\src\gltimer.cpp
+	"GLTimer.h"
+
+1709165386 source:c:\users\manme\desktop\178 - game development\lesson08\main.cpp
+	<windows.h>
+	<GLScene.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<iostream>
+	<windows.h>
+
+1709165386 c:\users\manme\desktop\178 - game development\lesson08\include\glscene.h
+	<common.h>
+
+1709167664 c:\users\manme\desktop\178 - game development\lesson08\include\common.h
+	<windows.h>
+	<iostream>
+	<gl/gl.h>
+	<GL/glut.h>
+	<time.h>
+	<SOIL.h>
+
+1707178716 c:\users\manme\desktop\178 - game development\common\include\gl\glut.h
+	<windows.h>
+	<stdlib.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1707181627 c:\users\manme\desktop\178 - game development\common\include\soil.h
+
+1709165387 source:c:\users\manme\desktop\178 - game development\lesson08\src\glinputs.cpp
+	"GLInputs.h"
+
+1709165386 c:\users\manme\desktop\178 - game development\lesson08\include\glinputs.h
+	<GLModel.h>
+	<GLParallax.h>
+	<common.h>
+
+1709165386 c:\users\manme\desktop\178 - game development\lesson08\include\glmodel.h
+	<common.h>
+
+1709165386 c:\users\manme\desktop\178 - game development\lesson08\include\glparallax.h
+	<common.h>
+	<GLTexture.h>
+	<GLTimer.h>
+
+1709165386 c:\users\manme\desktop\178 - game development\lesson08\include\gltexture.h
+	<common.h>
+
+1709165386 c:\users\manme\desktop\178 - game development\lesson08\include\gltimer.h
+	<common.h>
+
+1709165387 source:c:\users\manme\desktop\178 - game development\lesson08\src\gllight.cpp
+	"GLLight.h"
+
+1709165386 c:\users\manme\desktop\178 - game development\lesson08\include\gllight.h
+	<GLScene.h>
+
+1709165387 source:c:\users\manme\desktop\178 - game development\lesson08\src\glmodel.cpp
+	"GLModel.h"
+
+1709165387 source:c:\users\manme\desktop\178 - game development\lesson08\src\glparallax.cpp
+	"GLParallax.h"
+
+1709169592 source:c:\users\manme\desktop\178 - game development\lesson08\src\glplayer.cpp
+	"GLPlayer.h"
+
+1709168432 c:\users\manme\desktop\178 - game development\lesson08\include\glplayer.h
+	<common.h>
+	<GLTexture.h>
+	<GLTimer.h>
+
+1709169725 source:c:\users\manme\desktop\178 - game development\lesson08\src\glscene.cpp
+	"GLScene.h"
+	<GLLight.h>
+	<GLTexture.h>
+	<GLModel.h>
+	<GLInputs.h>
+	<GLParallax.h>
+	<GLPlayer.h>
+
+1709165387 source:c:\users\manme\desktop\178 - game development\lesson08\src\gltexture.cpp
+	"GLTexture.h"
+
+1709165387 source:c:\users\manme\desktop\178 - game development\lesson08\src\gltimer.cpp
+	"GLTimer.h"
+
+1709165386 source:c:\users\manme\desktop\178 - game development\project\main.cpp
+	<windows.h>
+	<GLScene.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<iostream>
+	<windows.h>
+
+1709165386 c:\users\manme\desktop\178 - game development\project\include\glscene.h
+	<common.h>
+
+1709167664 c:\users\manme\desktop\178 - game development\project\include\common.h
+	<windows.h>
+	<iostream>
+	<gl/gl.h>
+	<GL/glut.h>
+	<time.h>
+	<SOIL.h>
+
+1709165387 source:c:\users\manme\desktop\178 - game development\project\src\glinputs.cpp
+	"GLInputs.h"
+
+1709165386 c:\users\manme\desktop\178 - game development\project\include\glinputs.h
+	<GLModel.h>
+	<GLParallax.h>
+	<common.h>
+
+1709165386 c:\users\manme\desktop\178 - game development\project\include\glmodel.h
+	<common.h>
+
+1709165386 c:\users\manme\desktop\178 - game development\project\include\glparallax.h
+	<common.h>
+	<GLTexture.h>
+	<GLTimer.h>
+
+1709165386 c:\users\manme\desktop\178 - game development\project\include\gltexture.h
+	<common.h>
+
+1709165386 c:\users\manme\desktop\178 - game development\project\include\gltimer.h
+	<common.h>
+
+1709165387 source:c:\users\manme\desktop\178 - game development\project\src\gllight.cpp
+	"GLLight.h"
+
+1709165386 c:\users\manme\desktop\178 - game development\project\include\gllight.h
+	<GLScene.h>
+
+1709165387 source:c:\users\manme\desktop\178 - game development\project\src\glmodel.cpp
+	"GLModel.h"
+
+1709165387 source:c:\users\manme\desktop\178 - game development\project\src\glparallax.cpp
+	"GLParallax.h"
+
+1709170009 source:c:\users\manme\desktop\178 - game development\project\src\glplayer.cpp
+	"GLPlayer.h"
+
+1709168432 c:\users\manme\desktop\178 - game development\project\include\glplayer.h
+	<common.h>
+	<GLTexture.h>
+	<GLTimer.h>
+
+1709778850 source:c:\users\manme\desktop\178 - game development\project\src\glscene.cpp
+	"GLScene.h"
+	<GLLight.h>
+	<GLTexture.h>
+	<GLModel.h>
+	<GLInputs.h>
+	<GLParallax.h>
+	<GLPlayer.h>
+
+1709165387 source:c:\users\manme\desktop\178 - game development\project\src\gltexture.cpp
+	"GLTexture.h"
+
+1709165387 source:c:\users\manme\desktop\178 - game development\project\src\gltimer.cpp
+	"GLTimer.h"
+
