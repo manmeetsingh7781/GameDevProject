@@ -227,7 +227,7 @@
 	<GLTexture.h>
 	<GLTimer.h>
 
-1709778850 source:c:\users\manme\desktop\178 - game development\project\src\glscene.cpp
+1709607956 source:c:\users\manme\desktop\178 - game development\project\src\glscene.cpp
 	"GLScene.h"
 	<GLLight.h>
 	<GLTexture.h>
@@ -241,4 +241,97 @@
 
 1709165387 source:c:\users\manme\desktop\178 - game development\project\src\gltimer.cpp
 	"GLTimer.h"
+
+1709608140 source:c:\users\hp\onedrive\desktop\project\main.cpp
+	<windows.h>
+	<GLScene.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<iostream>
+	<windows.h>
+
+1709608140 c:\users\hp\onedrive\desktop\project\include\glscene.h
+	<common.h>
+
+1709608140 c:\users\hp\onedrive\desktop\project\include\common.h
+	<windows.h>
+	<iostream>
+	<gl/gl.h>
+	<GL/glut.h>
+	<time.h>
+	<SOIL.h>
+
+1709608140 source:c:\users\hp\onedrive\desktop\project\src\glinputs.cpp
+	"GLInputs.h"
+
+1709608140 c:\users\hp\onedrive\desktop\project\include\glinputs.h
+	<GLModel.h>
+	<GLParallax.h>
+	<common.h>
+
+1709608140 c:\users\hp\onedrive\desktop\project\include\glmodel.h
+	<common.h>
+
+1709608140 c:\users\hp\onedrive\desktop\project\include\glparallax.h
+	<common.h>
+	<GLTexture.h>
+	<GLTimer.h>
+
+1709608140 c:\users\hp\onedrive\desktop\project\include\gltexture.h
+	<common.h>
+
+1710271105 c:\users\hp\onedrive\desktop\project\include\gltimer.h
+	<common.h>
+
+1709608140 source:c:\users\hp\onedrive\desktop\project\src\gllight.cpp
+	"GLLight.h"
+
+1709608140 c:\users\hp\onedrive\desktop\project\include\gllight.h
+	<GLScene.h>
+
+1709608140 source:c:\users\hp\onedrive\desktop\project\src\glmodel.cpp
+	"GLModel.h"
+
+1710271461 source:c:\users\hp\onedrive\desktop\project\src\glparallax.cpp
+	"GLParallax.h"
+
+1710277375 source:c:\users\hp\onedrive\desktop\project\src\glplayer.cpp
+	"GLPlayer.h"
+
+1709608140 c:\users\hp\onedrive\desktop\project\include\glplayer.h
+	<common.h>
+	<GLTexture.h>
+	<GLTimer.h>
+
+1710389766 source:c:\users\hp\onedrive\desktop\project\src\glscene.cpp
+	"GLScene.h"
+	<GLLight.h>
+	<GLTexture.h>
+	<GLModel.h>
+	<GLInputs.h>
+	<GLParallax.h>
+	<GLPlayer.h>
+	<GLEnms.h>
+
+1709608140 source:c:\users\hp\onedrive\desktop\project\src\gltexture.cpp
+	"GLTexture.h"
+
+1710271846 source:c:\users\hp\onedrive\desktop\project\src\gltimer.cpp
+	"GLTimer.h"
+
+1709611740 c:\users\hp\onedrive\desktop\csci-178-main\common\include\gl\glut.h
+	<windows.h>
+	<stdlib.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1709611740 c:\users\hp\onedrive\desktop\csci-178-main\common\include\soil.h
+
+1710388941 source:c:\users\hp\onedrive\desktop\project\src\glenms.cpp
+	"GLEnms.h"
+
+1710387649 c:\users\hp\onedrive\desktop\project\include\glenms.h
+	<GLTexture.h>
+	<GL/gl.h>
+	<GLTimer.h>
 

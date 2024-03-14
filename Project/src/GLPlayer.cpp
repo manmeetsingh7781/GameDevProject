@@ -54,7 +54,7 @@ void GLPlayer::initPlayer(int x, int y, char* fileName){
     xMax = 1.0/(float)framesX;
     yMax = 1;
 
-    myTime->startTime = clock();
+    //myTime->startTime = clock();
 
 }
 
@@ -86,7 +86,7 @@ void GLPlayer::drawPlayer(){
 void GLPlayer::actions(){
 
 
-  if(clock() - myTime->startTime>100) {
+ // if(clock() - myTime->startTime>100) {
     switch (actionTrigger) {
 
     case STAND:
@@ -114,6 +114,6 @@ void GLPlayer::actions(){
         break;
     }
 
-    myTime->startTime = clock();
+//    myTime->startTime = clock();
  }
-}
+

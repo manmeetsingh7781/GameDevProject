@@ -5,14 +5,15 @@
 #include<GLInputs.h>
 #include<GLParallax.h>
 #include <GLPlayer.h>
+#include<GLEnms.h>
 
 GLInputs *KbMs       = new GLInputs();   // keyboard and Mouse
 
 // background
 GLParallax *backgroundImage      = new GLParallax(); // parallax
 
-GLParallax *spaceShip      = new GLParallax(); // parallax
-
+GLTexture *enmsTex = new GLTexture();
+GLEnms enms[20];
 
 GLScene::GLScene()
 {
@@ -38,10 +39,10 @@ GLint GLScene::initGL()
     GLLight Light(GL_LIGHT0);
     Light.setLight(GL_LIGHT0);
 
-    glEnable(GL_TEXTURE_2D);
+    enmsTex->loadTexture("images/Monster.png");
 
 
-   // glEnable(GL_BLEND);             // Transparent effect of pngs
+    glEnable(GL_BLEND);             // Transparent effect of pngs
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     glEnable(GL_TEXTURE_2D);  //enable textures
@@ -51,8 +52,13 @@ GLint GLScene::initGL()
 
     // init background image
     backgroundImage->parallaxInit("images/background.png");
-    spaceShip->parallaxInit("images/spaceShip3.png");
 
+    for (int i=0; i<20;i++)
+    {
+          enms[i].initEnemy(enmsTex->tex);
+          enms[i].placeEnemy((float)(rand()/float(RAND_MAX))*5-2.5,-0.2, -2.5);
+          enms[i].xSize= enms[i].ySize = float(rand()%12)/85.0;
+    }
 
     return true;
 }
@@ -60,44 +66,37 @@ GLint GLScene::initGL()
 GLint GLScene::drawScene()    // this function runs on a loop
                               // DO NOT ABUSE ME
 {
-
-    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);// clear bits in each iteration
+    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);// clear bits in each itterration
     glLoadIdentity();
+    glColor3f(1.0,1.0,1.0);     //color the object red
 
-    glScaled(3.33, 3.33, 1);
+    glPushMatrix(); //group object
+
+    glScaled(3.33,3.33,1.0);
+    glDisable(GL_LIGHTING);
 
     // objects that need to update
-    glPushMatrix();
 
     // update background
     backgroundImage->parallaxDraw(screenWidth,screenHeight);
 
-    glPopMatrix();
+   for(int i =0; i<20 ; i++){
 
-    glPushMatrix();
-
-    spaceShip->parallaxDraw(10,10);
-    glBegin(GL_QUADS);
-    glVertex3f(-1.0, 1.0, 0);
-    glVertex3f(1.0, 1.0, 0);
-    glVertex3f(1.0, -1.0, 0);
-    glVertex3f(-1.0, -1.0, 0);
-    glEnd();
-    glPopMatrix();
-
-    /*// player
-
-    glPushMatrix(); //group object
-    glBegin(GL_QUADS);
-    glEnable(GL_LIGHTING);
+        if(enms[i].xPos<-2.0)
+        {
+            enms[i].action=0;
+            enms[i].xMove=0.01;
+        }
+        else if(enms[i].xPos>2.0)
+        {
+            enms[i].action=1;
+            enms[i].xMove=-0.01;
+        }
+        enms[i].xPos +=enms[i].xMove;
+        enms[i].actions();
 
 
-   */
-
-
-
-
-
+    }
 
     return true;
 }

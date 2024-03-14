@@ -18,15 +18,15 @@ void GLParallax::parallaxInit(char* fileName)
 {
 
     background->loadTexture(fileName); //loading my background
-    myTime->startTime = clock();
+
 }
 
 void GLParallax::parallaxScroll(bool Auto, string dir, float speed)
 {
     if(Auto)
     {
-        if(clock() - myTime->startTime>15)
-        {
+        //if(clock() - myTime->start>15)
+        //{
 
         if(dir=="up")
         {
@@ -49,8 +49,8 @@ void GLParallax::parallaxScroll(bool Auto, string dir, float speed)
            xMax +=speed;
         }
 
-        myTime->startTime =clock();
-        }
+        //myTime->startTime =clock();
+        //}
     }
 }
 
