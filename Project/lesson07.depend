@@ -101,13 +101,13 @@
 	<time.h>
 	<SOIL.h>
 
-1707178716 c:\users\manme\desktop\178 - game development\common\include\gl\glut.h
+1707182316 c:\users\manme\desktop\178 - game development\common\include\gl\glut.h
 	<windows.h>
 	<stdlib.h>
 	<GL/gl.h>
 	<GL/glu.h>
 
-1707181627 c:\users\manme\desktop\178 - game development\common\include\soil.h
+1707185227 c:\users\manme\desktop\178 - game development\common\include\soil.h
 
 1709165387 source:c:\users\manme\desktop\178 - game development\lesson08\src\glinputs.cpp
 	"GLInputs.h"
@@ -334,4 +334,115 @@
 	<GLTexture.h>
 	<GL/gl.h>
 	<GLTimer.h>
+
+1710440490 source:c:\users\manme\desktop\gamedevproject-main\project\main.cpp
+	<windows.h>
+	<GLScene.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<iostream>
+	<windows.h>
+
+1710440492 c:\users\manme\desktop\gamedevproject-main\project\include\glscene.h
+	<common.h>
+
+1710440492 c:\users\manme\desktop\gamedevproject-main\project\include\common.h
+	<windows.h>
+	<iostream>
+	<gl/gl.h>
+	<GL/glut.h>
+	<time.h>
+	<SOIL.h>
+
+1710454857 source:c:\users\manme\desktop\gamedevproject-main\project\src\glenms.cpp
+	"GLEnms.h"
+
+1710450357 c:\users\manme\desktop\gamedevproject-main\project\include\glenms.h
+	<GLTexture.h>
+	<GL/gl.h>
+	<GLTimer.h>
+
+1710440492 c:\users\manme\desktop\gamedevproject-main\project\include\gltexture.h
+	<common.h>
+
+1710440492 c:\users\manme\desktop\gamedevproject-main\project\include\gltimer.h
+	<common.h>
+
+1710440492 source:c:\users\manme\desktop\gamedevproject-main\project\src\glinputs.cpp
+	"GLInputs.h"
+
+1710440491 c:\users\manme\desktop\gamedevproject-main\project\include\glinputs.h
+	<GLModel.h>
+	<GLParallax.h>
+	<common.h>
+
+1710440492 c:\users\manme\desktop\gamedevproject-main\project\include\glmodel.h
+	<common.h>
+
+1710440492 c:\users\manme\desktop\gamedevproject-main\project\include\glparallax.h
+	<common.h>
+	<GLTexture.h>
+	<GLTimer.h>
+
+1710440492 source:c:\users\manme\desktop\gamedevproject-main\project\src\gllight.cpp
+	"GLLight.h"
+
+1710440491 c:\users\manme\desktop\gamedevproject-main\project\include\gllight.h
+	<GLScene.h>
+
+1710440492 source:c:\users\manme\desktop\gamedevproject-main\project\src\glmodel.cpp
+	"GLModel.h"
+
+1710440492 source:c:\users\manme\desktop\gamedevproject-main\project\src\glparallax.cpp
+	"GLParallax.h"
+
+1710440492 source:c:\users\manme\desktop\gamedevproject-main\project\src\glplayer.cpp
+	"GLPlayer.h"
+
+1710440492 c:\users\manme\desktop\gamedevproject-main\project\include\glplayer.h
+	<common.h>
+	<GLTexture.h>
+	<GLTimer.h>
+
+1710440493 source:c:\users\manme\desktop\gamedevproject-main\project\src\gltexture.cpp
+	"GLTexture.h"
+
+1710440493 source:c:\users\manme\desktop\gamedevproject-main\project\src\gltimer.cpp
+	"GLTimer.h"
+
+1710454574 source:c:\users\manme\desktop\gamedevproject-main\project\src\enemymonodirection.cpp
+	"EnemyMonoDirection.h"
+
+1710453717 c:\users\manme\desktop\gamedevproject-main\project\include\enemymonodirection.h
+	<GLEnms.h>
+	"common.h"
+
+1710454429 source:c:\users\manme\desktop\gamedevproject-main\project\src\staticenemy.cpp
+	"StaticEnemy.h"
+
+1710454530 c:\users\manme\desktop\gamedevproject-main\project\include\staticenemy.h
+	"GLEnms.h"
+	<GLTexture.h>
+	<GL/gl.h>
+	<GLTimer.h>
+
+1710454869 source:c:\users\manme\desktop\gamedevproject-main\project\src\glscene.cpp
+	"GLScene.h"
+	<GLLight.h>
+	<GLTexture.h>
+	<GLModel.h>
+	<GLInputs.h>
+	<GLParallax.h>
+	<GLPlayer.h>
+	<GLEnms.h>
+	<EnemyMonoDirection.h>
+	<StaticEnemy.h>
+	<BiDirectionalEnemy.h>
+
+1710454805 source:c:\users\manme\desktop\gamedevproject-main\project\src\bidirectionalenemy.cpp
+	"BiDirectionalEnemy.h"
+
+1710454400 c:\users\manme\desktop\gamedevproject-main\project\include\bidirectionalenemy.h
+	<GLEnms.h>
+	"common.h"
 

@@ -6,6 +6,9 @@
 #include<GLParallax.h>
 #include <GLPlayer.h>
 #include<GLEnms.h>
+#include <EnemyMonoDirection.h>
+#include <StaticEnemy.h>
+#include <BiDirectionalEnemy.h>
 
 GLInputs *KbMs       = new GLInputs();   // keyboard and Mouse
 
@@ -13,7 +16,10 @@ GLInputs *KbMs       = new GLInputs();   // keyboard and Mouse
 GLParallax *backgroundImage      = new GLParallax(); // parallax
 
 GLTexture *enmsTex = new GLTexture();
-GLEnms enms[20];
+StaticEnemy static_enms[20];
+EnemyMonoDirection directional_enemies[20];
+BiDirectionalEnemy bi_directional_enemies[20];
+
 
 GLScene::GLScene()
 {
@@ -39,7 +45,7 @@ GLint GLScene::initGL()
     GLLight Light(GL_LIGHT0);
     Light.setLight(GL_LIGHT0);
 
-    enmsTex->loadTexture("images/Monster.png");
+    enmsTex->loadTexture("images/monster.png");
 
 
     glEnable(GL_BLEND);             // Transparent effect of pngs
@@ -55,9 +61,24 @@ GLint GLScene::initGL()
 
     for (int i=0; i<20;i++)
     {
-          enms[i].initEnemy(enmsTex->tex);
-          enms[i].placeEnemy((float)(rand()/float(RAND_MAX))*5-2.5,-0.2, -2.5);
-          enms[i].xSize= enms[i].ySize = float(rand()%12)/85.0;
+        static_enms[i].initEnemy(enmsTex->tex);
+        static_enms[i].placeEnemy((float)(rand()/float(RAND_MAX))*5-2.5,-0.2, -2.5);
+        static_enms[i].xSize= static_enms[i].ySize = float(rand()%12)/85.0;
+
+        directional_enemies[i].initEnemy(enmsTex->tex);
+        directional_enemies[i].placeEnemy((float)(rand()/float(RAND_MAX))*5-2.5,-0.2, -2.5);
+        directional_enemies[i].xSize= directional_enemies[i].ySize = float(rand()%12)/85.0;
+        // set random value for x or y axis
+        directional_enemies[i].setAxis(rand() % 2);
+
+
+
+        bi_directional_enemies[i].initEnemy(enmsTex->tex);
+        bi_directional_enemies[i].placeEnemy((float)(rand()/float(RAND_MAX))*5-2.5,-0.2, -2.5);
+        bi_directional_enemies[i].xSize= bi_directional_enemies[i].ySize = float(rand()%12)/85.0;
+
+
+
     }
 
     return true;
@@ -80,23 +101,31 @@ GLint GLScene::drawScene()    // this function runs on a loop
     // update background
     backgroundImage->parallaxDraw(screenWidth,screenHeight);
 
+    // bind the enemy to screen
+    enmsTex->bindTexture();
+
    for(int i =0; i<20 ; i++){
+        string enemy_type[3] = {"Static", "MonoDirectional", "BiDirectional"};
+        int random_index = rand() % 3;
+        string random_enemy_type = enemy_type[random_index];
 
-        if(enms[i].xPos<-2.0)
-        {
-            enms[i].action=0;
-            enms[i].xMove=0.01;
+        // not moving enemy
+        if (random_enemy_type == "Static") {
+            // place enemy at random position
+            static_enms[i].action = static_enms[i].STATIC;
+        }else if (random_enemy_type == "MonoDirectional"){
+            // moves either x or y axis
+            directional_enemies[i].updateEnemyMove();
         }
-        else if(enms[i].xPos>2.0)
-        {
-            enms[i].action=1;
-            enms[i].xMove=-0.01;
+        else {
+            bi_directional_enemies[i].updateEnemyMove();
         }
-        enms[i].xPos +=enms[i].xMove;
-        enms[i].actions();
+            static_enms[i].actions();
+            directional_enemies[i].actions();
+            bi_directional_enemies[i].actions();
 
+        }
 
-    }
 
     return true;
 }

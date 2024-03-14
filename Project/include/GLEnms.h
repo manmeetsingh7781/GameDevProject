@@ -14,6 +14,9 @@ class GLEnms
         void drawEnemy();                      //Draw Objects
         void placeEnemy(float,float,float);    // Place Enemy
         void initEnemy(GLuint);
+        enum {
+            STATIC, MOVE_AXIS, MOVE_DIRECTIONAL
+        };
         void actions();                       //Movements and actions
 
         bool isEnemyLive;                      //Status of the Enemy
@@ -26,6 +29,7 @@ class GLEnms
 
         int frames;                            // number of frames
         float xMove;                             // moving speed on x axis
+        float yMove;                             // moving speed on y axis
         int action;                          //to make an action for enemy
 
         GLTimer *TE = new GLTimer();
