@@ -8,6 +8,8 @@
 #include<GL/glut.h>
 #include<time.h>
 
+#include <cmath>
+
 #include<SOIL.h>
 
 using namespace std;

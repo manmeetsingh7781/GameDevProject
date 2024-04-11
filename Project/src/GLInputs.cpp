@@ -89,7 +89,7 @@ void GLInputs::mouseWheel(GLModel*mdl, double delta)
    mdl->zPos +=delta/100.0;   // mouse wheel movement
 }
 
-void GLInputs::mouseMove(GLModel* mdl, double x, double y)
+/*void GLInputs::mouseMove(GLModel* mdl, double x, double y)
 {
       if(mouse_Translate)
       {
@@ -109,6 +109,7 @@ void GLInputs::mouseMove(GLModel* mdl, double x, double y)
           prev_MouseY =y;                      // update previous mouse y
       }
 }
+*/
 void GLInputs::keyBackground(GLParallax* prlx, float speed)
 {
    //  if(clock() - myTime->startTime>15)

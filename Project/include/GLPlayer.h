@@ -4,6 +4,7 @@
 #include<common.h>
 #include<GLTexture.h>
 #include<GLTimer.h>
+#include <GLInputs.h>
 
 class GLPlayer
 {
@@ -21,7 +22,9 @@ class GLPlayer
         GLTimer   *myTime = new GLTimer();
 
         void initPlayer(int, int, char* fileName);
-        void drawPlayer();
+       void drawPlayer(int mouseX, int mouseY, int screenWidth, int screenHeight); // Updated function declaration
+
+
 
         void actions();
 
@@ -41,6 +44,8 @@ class GLPlayer
     protected:
 
     private:
+
+        void rotatePlayerToMouse(int mouseX, int mouseY, int screenWidth, int screenHeight); // New private function declaration
 };
 
 #endif // GLPLAYER_H

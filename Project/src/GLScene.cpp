@@ -5,20 +5,17 @@
 #include<GLInputs.h>
 #include<GLParallax.h>
 #include <GLPlayer.h>
-#include<GLEnms.h>
-#include <EnemyMonoDirection.h>
-#include <StaticEnemy.h>
-#include <BiDirectionalEnemy.h>
 
 GLInputs *KbMs       = new GLInputs();   // keyboard and Mouse
 
 // background
 GLParallax *backgroundImage      = new GLParallax(); // parallax
 
-GLTexture *enmsTex = new GLTexture();
-StaticEnemy static_enms[20];
-EnemyMonoDirection directional_enemies[20];
-BiDirectionalEnemy bi_directional_enemies[20];
+GLPlayer *pl          = new GLPlayer();   // Player class
+
+int mouseX = 0;
+int mouseY = 0;
+
 
 
 GLScene::GLScene()
@@ -45,7 +42,7 @@ GLint GLScene::initGL()
     GLLight Light(GL_LIGHT0);
     Light.setLight(GL_LIGHT0);
 
-    enmsTex->loadTexture("images/monster.png");
+    glEnable(GL_TEXTURE_2D);
 
 
     glEnable(GL_BLEND);             // Transparent effect of pngs
@@ -59,27 +56,8 @@ GLint GLScene::initGL()
     // init background image
     backgroundImage->parallaxInit("images/background.png");
 
-    for (int i=0; i<20;i++)
-    {
-        static_enms[i].initEnemy(enmsTex->tex);
-        static_enms[i].placeEnemy((float)(rand()/float(RAND_MAX))*5-2.5,-0.2, -2.5);
-        static_enms[i].xSize= static_enms[i].ySize = float(rand()%12)/85.0;
+    pl->initPlayer(1,4,"images/player.png");
 
-        directional_enemies[i].initEnemy(enmsTex->tex);
-        directional_enemies[i].placeEnemy((float)(rand()/float(RAND_MAX))*5-2.5,-0.2, -2.5);
-        directional_enemies[i].xSize= directional_enemies[i].ySize = float(rand()%12)/85.0;
-        // set random value for x or y axis
-        directional_enemies[i].setAxis(rand() % 2);
-
-
-
-        bi_directional_enemies[i].initEnemy(enmsTex->tex);
-        bi_directional_enemies[i].placeEnemy((float)(rand()/float(RAND_MAX))*5-2.5,-0.2, -2.5);
-        bi_directional_enemies[i].xSize= bi_directional_enemies[i].ySize = float(rand()%12)/85.0;
-
-
-
-    }
 
     return true;
 }
@@ -87,44 +65,44 @@ GLint GLScene::initGL()
 GLint GLScene::drawScene()    // this function runs on a loop
                               // DO NOT ABUSE ME
 {
-    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);// clear bits in each itterration
+
+    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);// clear bits in each iteration
     glLoadIdentity();
-    glColor3f(1.0,1.0,1.0);     //color the object red
 
-    glPushMatrix(); //group object
 
-    glScaled(3.33,3.33,1.0);
-    glDisable(GL_LIGHTING);
 
     // objects that need to update
-
+    glPushMatrix();
+    glScaled(3.33, 3.33, 1);
     // update background
     backgroundImage->parallaxDraw(screenWidth,screenHeight);
 
-    // bind the enemy to screen
-    enmsTex->bindTexture();
+    glPopMatrix();
 
-   for(int i =0; i<20 ; i++){
-        string enemy_type[3] = {"Static", "MonoDirectional", "BiDirectional"};
-        int random_index = rand() % 3;
-        string random_enemy_type = enemy_type[random_index];
+    glPushMatrix();
 
-        // not moving enemy
-        if (random_enemy_type == "Static") {
-            // place enemy at random position
-            static_enms[i].action = static_enms[i].STATIC;
-        }else if (random_enemy_type == "MonoDirectional"){
-            // moves either x or y axis
-            directional_enemies[i].updateEnemyMove();
-        }
-        else {
-            bi_directional_enemies[i].updateEnemyMove();
-        }
-            static_enms[i].actions();
-            directional_enemies[i].actions();
-            bi_directional_enemies[i].actions();
+    glPushMatrix();
+    glDisable(GL_LIGHTING);
+    pl->drawPlayer(mouseX, mouseY, screenWidth, screenHeight);
 
-        }
+    glEnable(GL_LIGHTING);
+    glPopMatrix();
+
+
+
+
+    /*// player
+
+    glPushMatrix(); //group object
+    glBegin(GL_QUADS);
+    glEnable(GL_LIGHTING);
+
+
+   */
+
+
+
+
 
 
     return true;
@@ -171,14 +149,43 @@ int GLScene::windMsg(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
         KbMs->mouseEventUp();
         break;
 
-    case WM_MOUSEMOVE:
-        KbMs->wParam = wParam;
-       //  KbMs->mouseMove(teaPotModel,LOWORD(lParam),HIWORD(lParam));
-         break;
+
     case WM_MOUSEWHEEL:
         //KbMs->mouseWheel(teaPotModel, (double)GET_WHEEL_DELTA_WPARAM(wParam));
        break;
+
+   case WM_MOUSEMOVE:
+            KbMs->wParam = wParam;
+            mouseX = LOWORD(lParam);
+        mouseY = HIWORD(lParam);
+
+
+            UpdateBackgroundMovement(hWnd); // Pass hWnd to the function
+            break;
+    break;
     }
 }
+
+void GLScene::UpdateBackgroundMovement(HWND hWnd) {
+    POINT mousePos;
+    GetCursorPos(&mousePos);
+    ScreenToClient(hWnd, &mousePos);
+    int centerX = screenWidth / 2;
+    int centerY = screenHeight / 2;
+    int deltaX = mousePos.x - centerX;
+    int deltaY = mousePos.y - centerY;
+    float speed = 0.000001f * sqrt(deltaX * deltaX + deltaY * deltaY);
+    std::string dir;
+    if (deltaX > 0)
+        dir += "right";
+    else if (deltaX < 0)
+        dir += "left";
+    if (deltaY > 0)
+        dir += "down";
+    else if (deltaY < 0)
+        dir += "up";
+    backgroundImage->parallaxScroll(true, dir, speed);
+}
+
 
 

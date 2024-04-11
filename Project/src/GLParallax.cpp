@@ -18,41 +18,36 @@ void GLParallax::parallaxInit(char* fileName)
 {
 
     background->loadTexture(fileName); //loading my background
-
+    myTime->startTime = clock();
 }
 
-void GLParallax::parallaxScroll(bool Auto, string dir, float speed)
+void GLParallax::parallaxScroll(bool Auto, std::string dir, float speed)
 {
-    if(Auto)
+    if (Auto)
     {
-        //if(clock() - myTime->start>15)
-        //{
-
-        if(dir=="up")
+        if (dir.find("up") != std::string::npos)
         {
-           yMin -=speed;
-           yMax -=speed;
+            yMin -= speed;
+            yMax -= speed;
         }
-        if(dir=="down")
+        if (dir.find("down") != std::string::npos)
         {
-           yMin +=speed;
-           yMax +=speed;
+            yMin += speed;
+            yMax += speed;
         }
-        if(dir=="left")
+        if (dir.find("left") != std::string::npos)
         {
-           xMin -=speed;
-           xMax -=speed;
+            xMin -= speed;
+            xMax -= speed;
         }
-        if(dir=="right")
+        if (dir.find("right") != std::string::npos)
         {
-           xMin +=speed;
-           xMax +=speed;
+            xMin += speed;
+            xMax += speed;
         }
-
-        //myTime->startTime =clock();
-        //}
     }
 }
+
 
 void GLParallax::parallaxDraw(float width, float height)
 {

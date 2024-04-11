@@ -9,6 +9,7 @@ class GLScene
     public:
         GLScene();
         virtual ~GLScene();
+         void UpdateBackgroundMovement(HWND hWnd);
         GLint initGL();
         GLint drawScene();
         GLvoid resizeScene(GLsizei, GLsizei);

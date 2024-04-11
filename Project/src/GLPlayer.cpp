@@ -49,22 +49,32 @@ void GLPlayer::initPlayer(int x, int y, char* fileName){
 
     // change these values to get different spirit
     xMin = 0;
-    yMin = 1.0/(float)framesY;
+    yMin = 0.25/(float)framesY;
 
-    xMax = 1.0/(float)framesX;
+    xMax = 0.25/(float)framesX;
     yMax = 1;
 
-    //myTime->startTime = clock();
+    myTime->startTime = clock();
 
 }
 
-void GLPlayer::drawPlayer(){
+void GLPlayer::drawPlayer(int mouseX, int mouseY, int screenWidth, int screenHeight) {
+
+
+
+
+
+    glPushMatrix(); // Save the current matrix state
     glTranslatef(plPosition.x, plPosition.y, plPosition.z);
-    glScalef(plScale.x, plScale.y, plScale.z);
+    const float scale_factor = 0.20;
+    glScalef(plScale.x * scale_factor, plScale.y * scale_factor, plScale.z * scale_factor);
+
 
     glColor3f(1,1,1);
     texture->bindTexture();
 
+    // Apply rotation to face the mouse cursor
+    rotatePlayerToMouse(mouseX, mouseY, screenWidth, screenHeight);
 
     glBegin(GL_QUADS);
 
@@ -81,12 +91,15 @@ void GLPlayer::drawPlayer(){
     glVertex3f(verts[3].x, verts[3].y, verts[3].z);
 
     glEnd();
+
+    glPopMatrix(); // Restore the previous matrix state
 }
+
 
 void GLPlayer::actions(){
 
 
- // if(clock() - myTime->startTime>100) {
+  if(clock() - myTime->startTime>100) {
     switch (actionTrigger) {
 
     case STAND:
@@ -114,6 +127,23 @@ void GLPlayer::actions(){
         break;
     }
 
-//    myTime->startTime = clock();
+    myTime->startTime = clock();
  }
+}
+
+void GLPlayer::rotatePlayerToMouse(int mouseX, int mouseY, int screenWidth, int screenHeight) {
+    // Calculate the angle between the player's position and the mouse cursor
+    float angle = atan2((screenHeight / 2) - mouseY, mouseX - (screenWidth / 2));
+
+    // Convert the angle from radians to degrees and adjust it for OpenGL rotation
+    float degrees = angle * (180.0f / M_PI) + 90.0f;
+
+    // Apply the rotation to the player's quad
+    glRotatef(degrees, 0.0f, 0.0f, 1.0f);
+}
+
+
+
+
+
 

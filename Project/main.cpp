@@ -357,6 +357,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
 			else									// Not Time To Quit, Update Screen
 			{
 			    scene->drawScene();
+			     scene->UpdateBackgroundMovement(hWnd); // Update background movement based on mouse position
 				SwapBuffers(hDC);					// Swap Buffers (Double Buffering)
 			}
 
