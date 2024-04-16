@@ -23,4 +23,20 @@
     - Changed action from `int` to `enum` so that 
         - action = 0 -> action = STATIC
 
-`updated by Manmeet Singh - Completed Enemy Types all 3 - May 14, 2024`
+`Manmeet Singh - Completed Enemy Types all 3 - May 14, 2024`
+
+# Merged Player with Enemies
+    - Added Player Class
+    - Made changes to GLScene, GLInput, GLEnums, GLTimer, main.cpp
+
+# Added Enemies images
+    - Changed the enemy's texture
+    - Static, MonoDirectional, and Directional enemies could have different textures, but when trying to bind them it causes flicking and overwriting of the previous texture.
+
+# Added Collision detection of enemies with the player
+    - Added GLCheckCollision Files
+    - In GLScene added radial collision detection with 3 types of enemies with the player
+
+# Changes in 
+    - GLTimer - changed variable names to what make more sense of it
+    - GLEnms - changed position of float to a vector3
